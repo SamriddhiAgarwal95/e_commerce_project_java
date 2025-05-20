@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seller Dashboard</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico:400,700|Roboto:400,700&display=swap" />
+  <link rel="stylesheet" href="css/style.css" />
+
+</head>
+<body>
+  <header>
+    <h1>Welcome, Seller</h1>
+    <nav>
+      <button onclick="logout()">Logout</button>
+    </nav>
+  </header>
+
+  <main>
+    <img src="images/logo2.jpg" alt="Logo" class="logo" 
+      onerror="this.onerror=null;this.src='https://via.placeholder.com/1600x400?text=Logo+Not+Found';" 
+      style="width:50vw;height:600px;display:block;object-fit:cover;margin: 0 auto 20px auto; border-radius: 18px; box-shadow: 0 4px 24px rgba(0,0,0,0.12);"
+       style="width:50%;height:400px;display:block;object-fit:contain;margin: 0 auto 20px auto; border-radius: 18px; box-shadow: 0 4px 24px rgba(0,0,0,0.12);" /><br>
+       
+    <section class="upload-section">
+      <h2>Upload a Product</h2>
+      <form id="productForm">
+        <input type="text" id="productName" placeholder="Product Name" required />
+        <input type="text" id="productImage" placeholder="Image URL" required />
+        <textarea id="productDescription" placeholder="Description" required></textarea>
+        <input type="number" id="productPrice" placeholder="Price" required />
+        <input type="number" id="productStock" placeholder="Stock Quantity" required />
+        <button type="submit">Add Product</button>
+      </form>
+    </section>
+
+    <section class="seller-products">
+      <h2>Your Products</h2>
+      <div class="product-list" id="sellerProductList">
+        <!-- Seller's products will be listed here -->
+      </div>
+    </section>
+  </main>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>

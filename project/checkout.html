@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Checkout</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="checkout-header" style="display: flex; align-items: center; gap: 18px; background: linear-gradient(90deg, #f8fafc 60%, #e0e7ff 100%); padding: 18px 32px; border-radius: 16px; box-shadow: 0 4px 16px rgba(60,60,120,0.08); margin-bottom: 24px;">
+      <img src="images/logo3.png" alt="Shop Logo" class="logo" style="height: 60px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.07);" />
+      <div>
+      <h1 style="font-family: 'Segoe UI', 'Arial', sans-serif; font-size: 2.5rem; font-weight: bold; color: #4f46e5; margin: 0 0 4px 0; letter-spacing: 2px; text-shadow: 1px 2px 8px #e0e7ff;">Checkout</h1>
+      <h2 style="font-family: 'Segoe UI', 'Arial', sans-serif; font-size: 1.3rem; font-style: italic; font-weight: bold; color: #0ea5e9; margin: 0; letter-spacing: 1px;">🛒 <span style="color:#f59e42;">Your Gateway to a Happy Shopping!</span></h2>
+      </div>
+    </div>
+    <button onclick="logout()">Logout</button>
+  </header>
+  <img src="images/logo2.jpg" alt="Logo" class="logo" 
+      onerror="this.onerror=null;this.src='https://via.placeholder.com/1600x400?text=Logo+Not+Found';" 
+      style="width:50vw;height:500px;display:block;object-fit:cover;margin: 0 auto 20px auto; border-radius: 18px; box-shadow: 0 4px 24px rgba(0,0,0,0.12);"
+       style="width:50%;height:500px;display:block;object-fit:contain;margin: 0 auto 20px auto; border-radius: 18px; box-shadow: 0 4px 24px rgba(0,0,0,0.12);" /><br>
+       
+
+  <main class="container">
+    <h2>Your Cart Summary</h2>
+    <div id="checkoutItems" class="product-list"></div>
+    <h3>Total: ₹<span id="totalAmount">0</span></h3>
+    <button onclick="confirmPurchase()">Confirm Purchase</button>
+  </main>
+
+  <script>
+    function displayCheckout() {
+      const cart = JSON.parse(localStorage.getItem('buyerCart')) || [];
+      const container = document.getElementById('checkoutItems');
+      const totalSpan = document.getElementById('totalAmount');
+      container.innerHTML = "";
+      let total = 0;
+
+      if (cart.length === 0) {
+        container.innerHTML = "<p>Your cart is empty.</p>";
+        totalSpan.textContent = "0";
+        return;
+      }
+
+      cart.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "product";
+        div.innerHTML = `
+          <img src="${item.imageUrl}" alt="${item.name}" />
+          <h3>${item.name}</h3>
+          <p>Price: ₹${item.price}</p>
+        `;
+        total += item.price;
+        container.appendChild(div);
+      });
+
+      totalSpan.textContent = total.toFixed(2);
+    }
+
+    function confirmPurchase() {
+      alert("Purchase confirmed! Thank you!");
+      localStorage.removeItem("buyerCart");
+      window.location.href = "buyer.html";
+    }
+
+    function logout() {
+      localStorage.removeItem("userType");
+      localStorage.removeItem("userData");
+      localStorage.removeItem("buyerCart");
+      window.location.href = "index.html";
+    }
+
+    displayCheckout();
+  </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-Commerce OOP Project</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- <h1 style="
+    font-size: 3.5rem;
+    font-weight: bold;
+    font-style: italic;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    color: #ff5722;
+    background: linear-gradient(90deg, #ff9800 0%, #ff5722 50%, #4caf50 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin: 40px 0 0 0;
+    letter-spacing: 2px;
+    text-shadow: 2px 4px 12px rgba(0,0,0,0.15);
+    width: 100vw;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    padding: 30px 0 10px 0;
+    box-sizing: border-box;
+    display: block;
+  ">
+    <span style="display: inline-block; width: 100%; max-width: 50vw; background: none; -webkit-text-fill-color: #ff5722; background-clip: initial; -webkit-background-clip: initial; box-shadow: none; padding: 0; margin: 0 auto; text-align: center;">Shop Smarter, Live Better</span>
+  </h1> -->
+  <div class="checkout-header" style="display: flex; align-items: center; gap: 18px; background: linear-gradient(90deg, #f8fafc 60%, #e0e7ff 100%); padding: 18px 32px; border-radius: 16px; box-shadow: 0 4px 16px rgba(60,60,120,0.08); margin-bottom: 24px;">
+      <img src="images/logo3.png" alt="Shop Logo" class="logo" style="height: 100px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.07);" />
+      <div>
+      <h1 style="font-family: 'Segoe UI', 'Arial', sans-serif; font-size: 2.5rem; font-weight: bold; color: #4f46e5; margin: 0 0 4px 0; letter-spacing: 2px; text-shadow: 1px 2px 8px #e0e7ff;">SMART CART</h1>
+      <h2 style="font-family: 'Segoe UI', 'Arial', sans-serif; font-size: 1.3rem; font-style: italic; font-weight: bold; color: #0ea5e9; margin: 0; letter-spacing: 1px;">🛒 <span style="color:#f59e42;">Your Everyday Shopping, Simplified</span></h2>
+      </div>
+    </div>
+  <header>
+    
+    <img src="images/main_img.jpg" alt="Logo" class="logo" 
+        onerror="this.onerror=null;this.src='https://via.placeholder.com/1600x400?text=Logo+Not+Found';" 
+        style="width:500vw;height:600px;display:block;object-fit:cover;margin: 0 auto 20px auto; border-radius: 18px; box-shadow: 0 4px 24px rgba(0,0,0,0.12);" /><br>
+    
+
+      
+  <div class="container">
+   
+    <div class="form-container" id="formContainer">
+      
+      <img src="images/cart.png" alt="Top Banner" 
+           style="width:100%;height:auto;max-height:250px;display:block;object-fit:cover;margin-bottom:10px;"
+           onerror="this.onerror=null;this.src='https://via.placeholder.com/1200x250?text=Top+Image+Not+Found';" />
+
+      
+      <img src="images/ecommerce-website-templates.jpg" alt="Logo" class="logo" 
+           onerror="this.onerror=null;this.src='https://via.placeholder.com/1200x250?text=Logo+Not+Found';" 
+           style="width:100%;height:auto;max-height:250px;display:block;object-fit:cover;" />
+
+    
+      
+      <div class="catchy-lines" style="text-align:center; margin-bottom: 20px;">
+        <h1>Welcome to Smart Cart !</h1>
+        <p>Explore. Shop. Enjoy seamless online buying and selling.</p>
+        <p>Your one-stop destination for smart shopping experiences.</p>
+      </div>
+      <div class="form-toggle">
+        <button id="buyerBtn" style="background: linear-gradient(90deg, #ff9800, #ff5722); color: #fff; font-weight: bold; font-size: 1.2rem; border: none; border-radius: 25px; padding: 12px 32px; margin: 0 10px; cursor: pointer; box-shadow: 0 4px 12px rgba(255,152,0,0.2); font-family: 'Segoe UI', 'Arial', sans-serif; letter-spacing: 1px; text-align: center; display: inline-block;">Buyer</button>
+        
+        <button id="sellerBtn">Seller</button>
+      </div>
+     <!-- Buyer Form -->
+      <form id="buyerForm" class="user-form">
+        <h2>Buyer Login/Register</h2>
+        <input type="text" placeholder="Full Name" required />
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Password" required />
+        <input type="text" placeholder="Address (optional)" />
+        <button type="submit">Login / Register</button>
+      </form>
+
+      <!-- Seller Form -->
+      <form id="sellerForm" class="user-form hidden">
+        <h2>Seller Login/Register</h2>
+        <input type="text" placeholder="Full Name" required />
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Password" required />
+        <input type="text" placeholder="Shop Name" required />
+        <button type="submit">Login / Register</button>
+      </form>
+    
+   
+
+  </div>
+
+  <script src="./js/main.js"></script>
+  <br>
+  <footer>
+    <p>&copy; Smart Cart. All rights reserved.</p>
+    <p>Contact us:</p>
+  </footer>
+</body>
+</html>

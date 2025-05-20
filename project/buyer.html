@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buyer Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+  
+</head>
+<body>
+  <header>
+    <h1 style="font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif; font-size: 2.5rem; color: #2d89ef; font-weight: bold; font-style: italic; margin-bottom: 0.2em; letter-spacing: 1px; text-shadow: 1px 1px 8px #b3d1ff;">
+      🚀 <span style="color: #ff6f61;">Welcome</span> to Your <span style="color: #00bfae;">Buyer Dashboard</span>!
+    </h1>
+    <p style="font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif; color: #444; font-size: 1.2rem; margin-top: 0; margin-bottom: 1.2em;">
+      <strong style="color: #ffb300;">Shop smart</strong>, <strong style="color: #00bfae;">track orders</strong>, and <strong style="color: #2d89ef;">manage your cart</strong> — all in one place!
+    </p>
+     
+    <nav>
+<button onclick="loadProducts()">View Products</button>
+<button onclick="loadOrders()">View Orders</button>
+<button onclick="viewCart()">View Cart 🛒</button>
+<button onclick="window.location.href='checkout.html'">Go to Checkout</button>
+<button onclick="logout()">Logout</button>
+    </nav>
+  </header>
+
+  <main>
+    <img src="images/cart.png" alt="Logo" class="logo" 
+      onerror="this.onerror=null;this.src='https://via.placeholder.com/1600x400?text=Logo+Not+Found';" 
+      style="width:50vw;height:400px;display:block;object-fit:cover;margin: 0 auto 20px auto; border-radius: 18px; box-shadow: 0 4px 24px rgba(0,0,0,0.12);"
+       style="width:50%;height:400px;display:block;object-fit:contain;margin: 0 auto 20px auto; border-radius: 18px; box-shadow: 0 4px 24px rgba(0,0,0,0.12);" /><br>
+       
+    <h2>Available Products</h2>
+    <div class="product-list" id="productList">
+      <!-- Products will be dynamically loaded here -->
+    </div>
+  </main>
+
+  <!-- Cart Modal -->
+  <div class="modal hidden" id="cartModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeCart()">&times;</span>
+      <h2>Your Cart</h2>
+      <div id="cartItems"></div>
+    </div>
+  </div>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>
